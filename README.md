@@ -10,16 +10,14 @@ This is a **Java Desktop Application** built using **Java** and **JDBC**. It ser
 
 - Add, view, update, and delete student details and marks.
 - Automatic calculation of total marks, average marks, and grade.
-- User-friendly Java Swing interface for desktop usage.
-- Data persistence with MySQL (or compatible) database via JDBC.
+- Data persistence with PostgreSQL (or compatible) database via JDBC.
 - Input validation and error handling for consistent data.
 
 ## 🛠️ Technologies Used
 
 - **Java**: Core language for application logic.
-- **Java Swing**: For building the desktop graphical user interface.
 - **JDBC**: For connecting and executing SQL queries with the database.
-- **MySQL** (or any RDBMS): Backend database to store student and marks data.
+- **PostgreSQL** (or any RDBMS): Backend database to store student and marks data.
 
 ## 📖 How to Use
 

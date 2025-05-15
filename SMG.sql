@@ -1,20 +1,23 @@
--- Create the database
-CREATE DATABASE IF NOT EXISTS student_marksheet;
-USE student_marksheet;
+CREATE DATABASE IF NOT EXISTS student_marks_db;
+USE student_marks_db;
 
--- Create the students table
-CREATE TABLE IF NOT EXISTS students (
-    student_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    roll_number VARCHAR(20) NOT NULL UNIQUE,
-    english_marks INT CHECK (english_marks BETWEEN 0 AND 100),
-    math_marks INT CHECK (math_marks BETWEEN 0 AND 100),
-    science_marks INT CHECK (science_marks BETWEEN 0 AND 100),
-    total_marks INT,
-    grade VARCHAR(2),
-    result VARCHAR(10)
+-- Create student table
+CREATE TABLE IF NOT EXISTS student (
+    rollno INT PRIMARY KEY,
+    fname VARCHAR(50) NOT NULL,
+    lname VARCHAR(50) NOT NULL,
+    standard INT NOT NULL,
+    section VARCHAR(10) NOT NULL
 );
 
-
-
-
+-- Create marks table
+CREATE TABLE IF NOT EXISTS marks (
+    marksid INT AUTO_INCREMENT PRIMARY KEY,
+    rollno INT NOT NULL,
+    physics DOUBLE,
+    chemistry DOUBLE,
+    maths DOUBLE,
+    english DOUBLE,
+    computer DOUBLE,
+    FOREIGN KEY (rollno) REFERENCES student(rollno) ON DELETE CASCADE ON UPDATE CASCADE
+);
